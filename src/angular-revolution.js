@@ -67,6 +67,9 @@ angular.module("rev.slider", ["rev.slider.tpls"])
                 };
                 return $timeout(function() {
                     var revapi;
+                    if (angular.isDefined(element[0])) {
+                        element = angular.element(element[0]);
+                    }
                     revapi = element.show().revolution({
                         sliderType: scope.sliderType,
                         sliderLayout: scope.sliderLayout,
